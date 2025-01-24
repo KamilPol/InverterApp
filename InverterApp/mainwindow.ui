@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>944</width>
+    <height>737</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>InverterApp</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="7" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="7" column="1">
+     <widget class="QPushButton" name="exitButton">
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Connection</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="5">
+         <widget class="QPushButton" name="pushButton">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="text">
+           <string>Clear</string>
+          </property>
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::EditClear"/>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="5">
+         <widget class="QCheckBox" name="autoScroll">
+          <property name="text">
+           <string>Autoscroll?</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="6">
+         <widget class="QTextEdit" name="logsTextEdit"/>
+        </item>
+        <item row="5" column="5">
+         <widget class="QPushButton" name="disconnectButton">
+          <property name="text">
+           <string>Disconnect</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="4">
+         <widget class="QPushButton" name="connectButton">
+          <property name="text">
+           <string>Connect</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="4">
+         <widget class="QPushButton" name="sendButton">
+          <property name="text">
+           <string>Send</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="4">
+         <widget class="QLineEdit" name="sendText">
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QPushButton" name="scanButton">
+          <property name="text">
+           <string>Scan Devices</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QComboBox" name="baudBox"/>
+        </item>
+        <item row="5" column="0" colspan="2">
+         <widget class="QComboBox" name="devicesBox"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Inverter Control</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="1" colspan="2">
+         <widget class="QWidget" name="widget" native="true">
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="2" column="3">
+            <widget class="QLineEdit" name="iDLineEdit"/>
+           </item>
+           <item row="0" column="4">
+            <widget class="QPushButton" name="setSpeedPushButton">
+             <property name="text">
+              <string>Set Speed</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QPushButton" name="iQPushButton">
+             <property name="text">
+              <string>Set iQ</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" rowspan="3">
+            <layout class="QVBoxLayout" name="SerialParametersLayout"/>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="reinitbox">
+             <property name="text">
+              <string>CheckBox</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="4">
+            <widget class="QPushButton" name="iDPushButton">
+             <property name="text">
+              <string>Set iD</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLineEdit" name="SpeedLineEdit"/>
+           </item>
+           <item row="0" column="1">
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLineEdit" name="iQLineEdit"/>
+           </item>
+           <item row="3" column="1" colspan="4">
+            <layout class="QGridLayout" name="graphLayout"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="ONpushButton">
+          <property name="text">
+           <string>Motor ON</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="OFFpushButton">
+          <property name="text">
+           <string>Motor OFF</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Graph</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>944</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>624</x>
+     <y>548</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>660</x>
+     <y>524</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
