@@ -185,19 +185,20 @@ void MainWindow::readFromPort()
 
                 // chart->axisX()->setRange(graphXaxis-500<0? 0 : graphXaxis-500,graphXaxis);
                 // chart->axisY()->setRange(0, 10);
-                chart->axes(Qt::Vertical).first()->setRange(minValue - minValue*0.1  , maxValue+maxValue*0.1);
+                chart->axes(Qt::Vertical).first()->setRange(minValue - minValue*0.5  , maxValue+maxValue*0.5);
                 chart->axes(Qt::Horizontal).first()->setRange(values[currentParameterListIndex][0].toFloat()-10000<0? 0 : values[currentParameterListIndex][0].toFloat()-10000, values[currentParameterListIndex][0].toFloat()+20);
                 // chart->axes(Qt::Vertical).first()->setRange(0,20);
                 // chart->axes(Qt::Horizontal).first()->setRange(0, graphXaxis);
                 paramsSeries[0]->append(values[currentParameterListIndex][0].toFloat(),values[currentParameterListIndex][2].toFloat());
-                //paramsSeries[1]->append(values[currentParameterListIndex][0].toFloat(),values[currentParameterListIndex][3].toFloat());
+                paramsSeries[1]->append(values[currentParameterListIndex][0].toFloat(),values[currentParameterListIndex][3].toFloat());
 
                 qDebug() << "i" << graphXaxis;
                 qDebug() << "val" <<paramsSeries[0]->count();
-
+                qDebug() << "time [ms]" <<values[currentParameterListIndex][0];
                 if (paramsSeries[0]->at(0).x() < values[currentParameterListIndex][0].toFloat()-11000)
                 {
                     paramsSeries[0]->removePoints(0,1);
+                    paramsSeries[1]->removePoints(0,1);
                     graphXaxis++;
                 }
                 // // {
